@@ -69,4 +69,4 @@ A responsabilidade da camada de Services é 'traduzir' as requisições da API p
 O projeto _Shared_ implementa toda regra que precisa ser compartilhada com as outras camadas do projeto, por exemplo, a classe abstrata do _Value Objects_. Também poderia estar implementado regras de segurança e/ou regras de validações.
 
 ### **5.Tests**
-Este projeto tem como responsabilidade criar e executar todos os tipos de testes, no primeiro momento, apenas com um exemplo de testes unitário, futuramente será implementando alguns exemplos de testes.
+Este projeto tem como responsabilidade criar e executar todos os tipos de testes, no primeiro momento, apenas com um exemplo de testes unitário.
