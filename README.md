@@ -1,8 +1,6 @@
 # Template de Projeto DDD (Domain Driven Design)
 
-Fala pessoal, tudo certo?
-
-Nesse projeto, foi implementado um template para utilização no Visual Studio 2019, utilizando "_DDD_" e alguns outros Designer Patterns.
+Implementado um template para utilização no Visual Studio 2019, utilizando "_DDD_" e alguns outros Designer Patterns.
 
 # Designer Patterns e Conceitos (Links)
 1. Inversão de Controle (IoC) - [O padrão de inversão de controle](https://imasters.com.br/dotnet/o-padrao-de-inversao-de-controle-ioc)
