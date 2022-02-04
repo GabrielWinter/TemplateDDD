@@ -24,15 +24,19 @@ Após colar o .zip na pasta é só abrir o Visual Studio 2019 e pedir para criar
 
 ![Visual_Studio_2019](TemplateVS2019.png)
 
-# Entendendo as Camadas
+# Entendendo...
+
+# Pesquisa e estudo realizado em diversos locais, segue um link para guia - [Explicação mais detalhada sobre o DDD e seus pilares](https://medium.com/beelabacademy/domain-driven-design-vs-arquitetura-em-camadas-d01455698ec5)
+
+# “Toda arquitetura é design, mas nem todo design é arquitetura” — Grady Booch
 
 ### **1.Application**
 
-Como todo projeto, precisamos de uma porta de entrada das nossas requisições e para esse template, estou utilizando o ASP.NET API, mas poderia também estar utilizando ASP.NET MVC. Lembrando que essa alteração implica na mudança da forma que desenvolvemos a injeção de Dependência.
+Como todo projeto, precisamos de uma porta de entrada das nossas requisições e para esse template, estou utilizando o ASP.NET API, mas poderia também estar utilizando ASP.NET MVC (alteração que implica na mudança da forma que desenvolvemos a injeção de Dependência).
 
 ### **2.Domain**
 
-Para este template, o projeto de Domain é responsável por gerenciar toda a regra de negócio da aplicação, por exemplo, é  nesta etapa do projeto que definimos que os _Pedidos_ tem vários _Itens_. A camada de domínio é a base para todo o conceito DDD (Domain Driven Design).
+Para este template, o projeto de Domain é responsável por gerenciar toda a regra de negócio da aplicação. A camada de domínio é a base para todo o conceito DDD (Domain Driven Design).
 
 Também no projeto de Domain foi definido as interfaces dos _Repositórios_, assim qualquer regra para acessar a base de dados será implementada neste projeto.
 
@@ -42,13 +46,13 @@ O projeto de Infraestrutura para este template tem como responsabilidade gerenci
 
 - **CrossCutting**
 
-    Nesta parte do template foi implementado a Injeção de Dependência dos repositórios, Services e também do Contexto que foi utilizado no template. Uma observação a ser feita, nesta parte do projeto as linhas para utilização da Banco de Dados SQL Server como contexto está comentado.
+    Nesta parte do template foi implementado a Injeção de Dependência dos repositórios, Services e também do Contexto que foi utilizado no template (linhas para utilização da Banco de Dados SQL Server como contexto está comentado).
 
-    Existem alguns exemplos que a camada de CrossCutting, é responsável por incluir toda regra de segurança da aplicação, Cache e entre outros. Para este template foi incluido o projeto Shared, assim deixando o projeto de Application com menos responsabilidades possiveis.
+    Existem alguns exemplos que a camada de CrossCutting, é responsável por incluir toda regra de segurança da aplicação, Cache e entre outros. Para este template foi incluido o projeto Shared, assim deixando o projeto de Application com menos responsabilidades possíveis.
 
 - **Data**
 
-    Tem como responsabilidade a implementação do Contexto utilizado, por exemplo, se voce utiliza Entity Framework, é nesta camada onde seria implementado o _Unit of Work_, onde seria implementado os DbSet e toda configuração o EF.
+    Tem como responsabilidade a implementação do Contexto utilizado, por exemplo, se voce utiliza Entity Framework, é nesta camada onde seria implementado o _Unit of Work_, onde seria implementado os DbSet e toda configuração do EF.
 
     As interfaces dos repositórios que foram declaradas no projeto Domain, tem a sua implementação realizada neste projeto.
 
@@ -58,7 +62,7 @@ A responsabilidade da camada de Services é 'traduzir' as requisições da API p
 
 - **Interface**
 
-    No template, este projeto é utilizado para a implementação das classes de DTO, responsáveis por receber as informações enviadas pela camada de _Application_, e também por definir as interfaces que serão utilizadas no projeto de Service. Para realizar o mapeamento entre uma DTO e uma Entidade, utilizei o componente AutoMapper.
+    No template, este projeto é utilizado para a implementação das classes de DTO, responsáveis por receber as informações enviadas pela camada de _Application_, e também por definir as interfaces que serão utilizadas no projeto de Service. Utilizado o componente AutoMapper para o mapeamento entre uma DTO e uma Entidade.
 
 - **Services**
 
@@ -66,7 +70,7 @@ A responsabilidade da camada de Services é 'traduzir' as requisições da API p
 
 ### **4.Shared**
 
-O projeto _Shared_ implementa toda regra que precisa ser compartilhada com as outras camadas do projeto, por exemplo, a classe abstrata do _Value Objects_. Também poderia estar implementado regras de segurança e/ou regras de validações.
+O projeto _Shared_ implementa toda regra que precisa ser compartilhada com as outras camadas do projeto, por exemplo, a classe abstrata do _Value Objects_.
 
 ### **5.Tests**
-Este projeto tem como responsabilidade criar e executar todos os tipos de testes, no primeiro momento, apenas com um exemplo de testes unitário.
+Este projeto tem como responsabilidade criar e executar todos os tipos de testes.
